@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean name="dao" class="com.Application.DAO">
+
+    </bean>
+
+    <bean name="service" class="com.Application.UserService">
+        <property name="dao" ref="dao"/>
+    </bean>
+
+    <bean name="controller" class="com.Application.UserController">
+        <property name="service" ref="service"/>
+    </bean>
+</beans>
